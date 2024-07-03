@@ -33,8 +33,9 @@ function search(){
         data.forEach(obj=>{
             common.innerText = obj.name.common;
             official.innerText = obj.name.official;
+            img.innerHTML=`<img src="${obj.flags.png}" alt="">`
         })
-        
+
         console.log(data);
     })
 }
