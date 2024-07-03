@@ -18,15 +18,23 @@
                             <label for="Search" class="fw-bolder">Search Contry</label>
                         </div>
                         <div class="col-4">
-                            <input type="text" class="text-black" size="20"> 
+                            <input type="text" class="text-black" size="20" id="searchby"> 
                         </div>
                         <div class="col-4">
-                            <button class="bg-info rounded-5">Search</button>
+                            <button class="bg-info rounded-5" onclick="search()">Search</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="container mt-5"><table id="tbl" class="table table-dark table-hover"></table> </div>
+            <div class="container bg-secondary rounded-5 mt-5">
+                <h1 class="text-center" id="Common">Common</h1>
+                <h2 class="text-center" id="Official">Official</h2>
+                <img src="" alt="" id="img">
+            </div>
+            
+            <div class="container mt-5">
+                <table id="tbl" class="table table-dark table-hover"></table>
+             </div>
         </div>
     
 

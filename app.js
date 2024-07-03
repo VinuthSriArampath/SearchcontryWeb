@@ -4,18 +4,37 @@ fetch("https://restcountries.com/v3.1/all")
     let tblCountries=document.getElementById("tbl");
 
     let tblBody=`<tr>
-                    <th>Name</th>
+                    <th class="text-start">Name</th>
                     <th>Flag</th>
                 </tr>`;
 
     data.forEach(element => {
         tblBody+=`<tr>
-                    <td>${element.name.common}</td>
-                    <td>${element.flag}</td>
+                    <td class="text-start">${element.name.common}</td>
+                    <td >${element.flag}</td>
                 </tr>`
-
-        console.log(element.name.common);
     });
 
     tblCountries.innerHTML=tblBody
-})
+
+});
+
+function search(){
+    let searchValue=document.getElementById("searchby").value;
+    let common=document.getElementById("Common");
+    let official=document.getElementById("Official");
+
+    console.log(searchValue);
+    fetch(`https://restcountries.com/v3.1/name/${searchValue}`)
+    .then(res=>res.json())
+    .then(data=>{
+        
+        
+        data.forEach(obj=>{
+            common.innerText = obj.name.common;
+            official.innerText = obj.name.official;
+        })
+        
+        console.log(data);
+    })
+}
